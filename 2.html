@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM 2</title>
+  </head>
+    <body>
+      <a href="#">1-st</a>
+      <a href="#">2-nd</a>
+      <a href="#">3-rd</a>
+  
+ <p></p>
+     
+
+ <script>
+
+var arrUrl = document.getElementsByTagName('a');
+document.write("Кількість ссилок: "+ arrUrl.length + " <p></p>")
+
+for(var i=0;i<arrUrl.length;i++){
+ 
+}
+document.write("Текст 1-го посилання: "+arrUrl[0].innerHTML + "<p></p>")
+
+  document.write("Текст останнього посилання: "+arrUrl[arrUrl.length-1].innerHTML)
+
+</script>
+
+    </body>
+  
+</html>

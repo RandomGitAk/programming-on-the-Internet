@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM 4</title>
+    <style>
+
+   P { 
+    margin-left: 40px;
+   }
+  </style> 
+  </head>
+    <body>
+    
+    <h1>Улюблені книги</h1>
+ <div id="list"></div>
+
+<script>
+   var div = document.getElementById('list');
+  var p = document.createElement('p');
+  div.appendChild(p);
+
+  var book = [
+
+ {name:`"Foreword"`, author:`Norman`, age: 2018},
+ {name:`"BoyWhoLived"`,author:`Riden`, age: 2015},
+ {name:`"VanishingGlass"`, author:`Koval`,age: 2013},
+ {name:`"LettersFromNoOne"`, author:`Privan`,age: 2017},
+ {name:`"Afterword"`,author:`Rolen`, age: 2019}
+];
+
+  for (var i = 0, ln = book.length; i < ln; i++) {
+    var li = document.createElement('li');
+    li.innerHTML = book[i].name +" " + book[i].author + " "+ book[i].age ;
+
+    p.appendChild(li);
+
+}
+ </script>
+    </body>
+  
+</html>

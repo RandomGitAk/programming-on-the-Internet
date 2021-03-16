@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM 3</title>
+  </head>
+    <body>
+     <ul id="ul">
+  <li>Шанхай</li>
+  <li>Пекін</li>
+  <li>Стамбул</li>
+   <li>Карачі</li>
+    <li>Мумбаї</li>
+     <li>Москва</li>
+      <li>Сан-Паулу</li>
+       <li>Лахор</li>
+        <li>Делі</li>
+         <li>Гуанчжоу </li>
+         
+</ul>
+<button onclick="myFunction()">Try click</button>
+<button onclick="add()">click to Add</button>
+<button onclick="remove()">click to Remove</button>
+<script>
+
+function myFunction() {
+  var myCollection = document.getElementsByTagName("li");
+  var i;
+  for (i = 0; i < myCollection.length; i++) {
+    myCollection[i].style.color = "red";
+     myCollection[i].style.fontSize = "20px";
+  }
+}
+function add() {
+let liLast = document.createElement('li');
+  liLast.innerHTML = 'newCity';
+  ul.append(liLast); 
+
+}
+function remove() {
+var list=document.getElementById("ul");
+    var listItems = list.getElementsByTagName("li");
+
+    var last=listItems[listItems.length-1];
+    list.removeChild(last);
+}
+ </script>
+    </body>
+  
+</html>

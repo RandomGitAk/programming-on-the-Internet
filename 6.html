@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Вершиин</title>
+   <style>
+  
+   td {
+    width: 10.68%; /* Ширина ячейки */
+   }
+  </style>
+  <body>
+    <h1>Найвищі вершини</h1>
+
+     <table  id="myTable" cellspacing="0" border="1">
+
+   <tr>
+    <td>Назва</td>
+    <td>Країна</td>
+    <td>Висота</td>
+   </tr>
+
+    </table>
+
+
+
+<form action="#"><input type="text" value="" />
+<form action="#"><input type="text" value="" />
+<form action="#"><input type="text" value="" />
+    <button type="button" onclick="addRow('myTable')">Set value</button>
+<script >
+ 
+  function addRow(id){
+    var tbody = document.getElementById(id).getElementsByTagName("TBODY")[0];
+    var row = document.createElement("TR")
+
+    var td1 = document.createElement("TD")
+ var text = document.getElementsByTagName("input")[0];
+      var val1=text.value;
+    td1.appendChild(document.createTextNode(val1))
+
+
+    var td2 = document.createElement("TD")
+     var text = document.getElementsByTagName("input")[1];
+      var val2=text.value;
+    td2.appendChild (document.createTextNode(val2))
+
+
+    var td3 = document.createElement("TD")
+    var text = document.getElementsByTagName("input")[2];
+      var val3=text.value;
+    td3.appendChild (document.createTextNode(val3))
+    row.appendChild(td1);
+    row.appendChild(td2);
+    row.appendChild(td3);
+    tbody.appendChild(row);
+  }
+</script>
+  </body>
+ </head>
+      </html>
