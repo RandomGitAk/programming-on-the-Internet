@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	
+<div id="app">
+  <p>Імя: {{ fiestname }}</p>
+  <p>Прізвище: {{ lastname }}</p>
+  <span>Дата народження: {{ birsday }}</span>
+  <button v-on:click="printMessage"> Message</button>
+  <span>{{ print }}</span>
+
+</div>
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script>	
+const App = {
+  data() {
+
+    return {
+    fiestname: 'Vova',
+    lastname:'Mishchenko',  
+    birsday:'20-2-2000',
+    print:''
+
+  
+    }
+  },
+  methods:{
+
+  	printMessage(){
+ var date = new Date();
+ var dates = date.getDate();
+var month = date.getMonth();
+const re = this.birsday.split(/[.,\/ -]/);
+var datess= re[0];
+var months = re[1];
+ if (month != months  || dates != datess ){
+ this.print = 'Sorry, '+ this.fiestname + ' ' + this.lastname }
+ else{this.print = 'Happy Birthday '+ this.fiestname + ' ' + this.lastname }
+}
+
+
+
+  }
+}
+
+Vue.createApp(App).mount('#app')
+ 
+</script>
+
+
+</body>
+</html>

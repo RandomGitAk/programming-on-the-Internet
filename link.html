@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	
+<div id="app">
+
+   <p><a v-bind:href= " url "   href=""  >перейти за посиланням</a></p>
+    <button v-on:click="getDayInfo"> Клікніть для  змінення дати</button>
+
+</div>
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script>	
+const App = {
+  data() {
+
+    return {
+    birsday:'19-2-2000',
+    href:'https://en.wikipedia.org/wiki/March_',
+    url:''
+  
+    }
+  },
+  methods:{
+
+getDayInfo(){
+
+var date = new Date();
+ var dates = date.getDate();
+const re = this.birsday.split(/[.,\/ -]/);
+var datess= re[0];
+this.url= this.href + datess
+
+}
+
+  }
+}
+
+Vue.createApp(App).mount('#app')
+ 
+</script>
+
+
+</body>
+</html>
