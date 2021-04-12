@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	
+<div id="todo-list-example">
+  <form v-on:submit.prevent="addNewTodo">
+    <label for="new-todo">Додайте коментар</label>
+   <textarea
+      v-model="newTodoText"
+      id="new-todo"
+
+    /> </textarea>
+    <button>Add</button>
+  </form>
+  <ul>
+    <todo-item
+      v-for="(todo, index) in todos"
+      :key="todo.id"
+      :title="todo.title"
+      @remove="todos.splice(index, 1)"
+    ></todo-item>
+  </ul>
+</div>
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script>	
+const app = Vue.createApp({
+  data() {
+    return {
+      newTodoText: '',
+      todos: [
+        {
+          id: 1,
+          title: 'Відправлений відгук Час додаваня 14:38:10'
+        }
+        
+      ],
+      nextTodoId: 2
+    }
+  },
+  methods: {
+    addNewTodo() {
+       var 
+  now = new Date(),
+  hour = now.getHours(),
+  minute = now.getMinutes(),
+  second = now.getSeconds(),
+  message = '';
+
+      this.todos.push({
+        id: this.nextTodoId++,
+        title: this.newTodoText + "\n"+" Час додаваня " + hour + ":" + minute + ":" + second
+      })
+      this.newTodoText = '' 
+    }
+  }
+})
+
+app.component('todo-item', {
+  template: `
+    <li>
+      {{ title }}
+      <button @click="$emit('remove')">Remove</button>
+    </li>
+  `,
+  props: ['title'],
+  emits: ['remove']
+})
+
+app.mount('#todo-list-example')
+
+ 
+</script>
+
+
+</body>
+</html>
